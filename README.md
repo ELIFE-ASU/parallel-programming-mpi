@@ -78,7 +78,7 @@ one another (provided you have enough free CPU cores).
 
 # Models of Parallelism
 
-There are two classes of parallel computing: threaded and distributed
+There are three classes of parallel computing: threaded, distributed and GPU
 computing.
 
 Under the threading model:
@@ -101,6 +101,18 @@ Under the distributed model:
    - Processes can (in principle) run on any machine anywhere
 - Cons:
    - Message passing has a greater runtime cost than shared memory
+
+Under the GPU model:
+
+- Graphics processing units are used in place of the CPU
+- GPUs have a huge number of relatively dump control units
+- Pros:
+   - Very fast if what you're parallelizing is "simple", e.g. matrix
+     multiplication
+- Cons:
+   - Very slow if the units of computation have complex logic, e.g. lots of if
+     statements
+   - Confined to a single machine unless combined with distributed computing
 
 # Message Passing Mechanisms
 
